@@ -3,7 +3,7 @@ FROM centos:8
 LABEL maintainer "@irix_jp"
 
 RUN dnf update -y && \
-    dnf install -y glibc-all-langpacks gcc make rpm-build git sudo which tree jq autoconf automake libcurl-devel && \
+    dnf install -y glibc-all-langpacks gcc make git sudo which tree jq && \
     dnf install -y epel-release && dnf install -y crudini && \
     dnf module install -y python36:3.6/common && \
     dnf module install -y python36:3.6/build && \
