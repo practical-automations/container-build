@@ -33,10 +33,10 @@ RUN useradd jupyter -m -d /jupyter && \
 USER jupyter
 WORKDIR /jupyter
 
-COPY --chown=jupyter:jupyter build/jupyter/assets/.jupyter /jupyter/.jupyter
-COPY --chown=jupyter:jupyter build/jupyter/assets/.ansible.cfg /jupyter/.ansible.cfg
-COPY --chown=jupyter:jupyter build/jupyter/assets/.tower_cli.cfg /jupyter/.tower_cli.cfg
-COPY --chown=jupyter:jupyter build/jupyter/assets/.python-gitlab.cfg /jupyter/.python-gitlab.cfg
+COPY --chown=jupyter:jupyter jupyter/assets/.jupyter /jupyter/.jupyter
+COPY --chown=jupyter:jupyter jupyter/assets/.ansible.cfg /jupyter/.ansible.cfg
+COPY --chown=jupyter:jupyter jupyter/assets/.tower_cli.cfg /jupyter/.tower_cli.cfg
+COPY --chown=jupyter:jupyter jupyter/assets/.python-gitlab.cfg /jupyter/.python-gitlab.cfg
 
 RUN ansible-galaxy collection install awx.awx
 
